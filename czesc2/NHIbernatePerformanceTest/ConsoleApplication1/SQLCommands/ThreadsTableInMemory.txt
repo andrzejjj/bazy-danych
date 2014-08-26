@@ -1,0 +1,26 @@
+﻿EXEC dbo.sp_rename @objname = N'[dbo].[Threads]', @newname = N'Threads_old', @objtype = N'OBJECT'
+
+SET ANSI_NULLS ON
+
+CREATE TABLE [dbo].[Threads]
+(
+	[THR_ID] [int] NOT NULL,
+	[THR_Title] [nvarchar](1000) COLLATE Latin1_General_100_CI_AS NOT NULL,
+	[THR_CreationDate] [datetime] NOT NULL,
+	[THR_USRID] [int] NOT NULL,
+
+INDEX [IDX_THR_CREATIONDATE] NONCLUSTERED HASH 
+(
+	[THR_CreationDate]
+)WITH ( BUCKET_COUNT = 1024),
+INDEX [IDX_THR_USRID] NONCLUSTERED HASH 
+(
+	[THR_USRID]
+)WITH ( BUCKET_COUNT = 512),
+CONSTRAINT [Threads_primaryKey] PRIMARY KEY NONCLUSTERED HASH 
+(
+	[THR_ID]
+)WITH ( BUCKET_COUNT = 1024)
+)WITH ( MEMORY_OPTIMIZED = ON , DURABILITY = SCHEMA_AND_DATA )
+
+

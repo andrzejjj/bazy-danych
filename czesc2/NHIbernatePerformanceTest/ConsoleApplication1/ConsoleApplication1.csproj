@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3DBB679-CDF7-41BA-B247-EA7A2A485FF8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
+    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Access\AbstractDataAccess.cs" />
+    <Compile Include="Data Access\ImprovedDataAccess.cs" />
+    <Compile Include="Data Access\SimpleDataAccess.cs" />
+    <Compile Include="Data Access\SQLBulkCopyDataAccess.cs" />
+    <Compile Include="DomainCreator.cs" />
+    <Compile Include="Data Access\IDataAccess.cs" />
+    <Compile Include="Log4NetConfigurator.cs" />
+    <Compile Include="NHIbernateHelper\HiloNHibernateHelper.cs" />
+    <Compile Include="NHIbernateHelper\IdentityNHibernateHelper.cs" />
+    <Compile Include="NHIbernateHelper\IncrementNHibernateHelper.cs" />
+    <Compile Include="NHIbernateHelper\NHibernateHelper.cs" />
+    <Compile Include="Model\Domain\Post.cs" />
+    <Compile Include="Model\Domain\Thread.cs" />
+    <Compile Include="Model\Domain\User.cs" />
+    <Compile Include="PostHolder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLParser.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="data\tolkien.xml" />
+    <Content Include="lib\Iesi.Collections.dll" />
+    <Content Include="lib\log4net.dll" />
+    <Content Include="lib\NHibernate.dll" />
+    <EmbeddedResource Include="SQLCommands\DropOldTables.txt" />
+    <EmbeddedResource Include="SQLCommands\DropForeingKeys.txt" />
+    <EmbeddedResource Include="SQLCommands\FullTextSearchIndexCreate.txt" />
+    <EmbeddedResource Include="SQLCommands\FullTextSearchIndexPopulationStatus.txt" />
+    <EmbeddedResource Include="SQLCommands\PostsContainsFrodo.txt" />
+    <EmbeddedResource Include="SQLCommands\PostsTableInMemory.txt" />
+    <EmbeddedResource Include="SQLCommands\ThreadsTableInMemory.txt" />
+    <EmbeddedResource Include="SQLCommands\UsersTableInMemory.txt" />
+    <EmbeddedResource Include="SQLCommands\Word35thMostCommon.txt" />
+    <EmbeddedResource Include="Model\Mappings\IncrementGenerator\Thread.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\IncrementGenerator\User.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\IncrementGenerator\Post.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\IdentityGenerator\User.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\IdentityGenerator\Thread.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\IdentityGenerator\Post.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\HiloGenerator\Post.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\HiloGenerator\User.hbm.xml" />
+    <EmbeddedResource Include="Model\Mappings\HiloGenerator\Thread.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="lib\nhibernate-configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lib\nhibernate-mapping.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

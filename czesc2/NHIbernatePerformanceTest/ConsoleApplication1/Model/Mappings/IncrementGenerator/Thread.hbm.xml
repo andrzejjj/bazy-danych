@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ConsoleApplication1" namespace="ConsoleApplication1.Model.Domain">
+  <class name="Thread" table="Threads">
+    <id name="ID">
+      <column name="THR_ID"/>
+      <generator class="increment" />
+    </id>
+    <property name="Title" type="string">
+      <column name="THR_Title" length="1000" not-null="true"/>
+    </property>
+    <property name="CreationDate" type="DateTime">
+      <column name="THR_CreationDate" not-null="true" />
+    </property>
+    <many-to-one name="User" column="THR_USRID" foreign-key="FK_THR_USR" not-null="true" cascade="all"/>
+    <set name="Posts" inverse="true" cascade="all">
+      <key column="PST_THRID" not-null="true"/>
+      <one-to-many class="Post"/>
+    </set>
+  </class>
+</hibernate-mapping>
+

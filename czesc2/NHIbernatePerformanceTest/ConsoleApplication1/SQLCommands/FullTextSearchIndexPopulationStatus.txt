@@ -1,0 +1,1 @@
+﻿SELECT OBJECTPROPERTY(object_id('dbo.Posts'), 'TableFulltextPopulateStatus')

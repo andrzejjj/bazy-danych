@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ConsoleApplication1" namespace="ConsoleApplication1.Model.Domain">
+<class name="Post" table="Posts">
+  <id name="ID">
+    <column name="PST_ID"/>
+    <generator class="identity" />
+  </id>
+  <property name="Content" type="string">
+    <column name="PST_Content" sql-type="NVARCHAR(MAX)" not-null="true" length="10000000"/>
+  </property>
+  <property name="CreationDate" type="DateTime">
+    <column name="PST_CreationDate" not-null="true" />
+  </property>
+  <many-to-one name="User" column="PST_USRID" foreign-key="FK_PST_USR" not-null="true" cascade="all"/>
+  <many-to-one name="Thread" column="PST_THRID" foreign-key="FK_PST_THR" not-null="true" cascade="all"/>
+</class>
+</hibernate-mapping>

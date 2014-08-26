@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ConsoleApplication1" namespace="ConsoleApplication1.Model.Domain">
+  <class name="User" table="Users">
+    <id name="ID">
+      <column name="USR_ID"/>
+      <generator class="hilo" />
+    </id>
+    <property name="Login" type="string">
+      <column name="USR_Login" length="100" not-null="true"/>
+    </property>
+    <property name="City" type="string">
+      <column name="USR_City" length="100" index="IDX_USR_CITY" not-null="true"/>
+    </property>
+    <property name="CreationDate" type="DateTime">
+      <column name="USR_CreationDate" not-null="false" />
+    </property>
+    <set name="Threads" inverse="true" cascade="all">
+      <key column="THR_USRID" not-null="true"/>
+      <one-to-many class="Thread"/>
+    </set>
+    <set name="Posts" inverse="true" cascade="none">
+      <key column="PST_USRID" not-null="true"/>
+      <one-to-many class="Post"/>
+    </set>
+  </class>
+</hibernate-mapping>

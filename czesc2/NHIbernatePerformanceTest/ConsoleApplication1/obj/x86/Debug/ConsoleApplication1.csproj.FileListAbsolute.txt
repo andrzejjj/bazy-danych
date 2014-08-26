@@ -1,0 +1,9 @@
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\bin\Debug\Iesi.Collections.dll
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\bin\Debug\NHibernate.dll
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\bin\Debug\log4net.dll
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\Users\Andrzej\documents\visual studio 2010\Projects\NHIbernatePerformanceTest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache

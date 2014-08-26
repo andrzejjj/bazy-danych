@@ -1,0 +1,4 @@
+﻿SELECT display_term FROM sys.dm_fts_index_keywords(db_id('TolkienForum'), object_id('dbo.Posts'))
+ORDER BY document_count DESC
+OFFSET 35 ROWS
+FETCH NEXT 1 ROWS ONLY

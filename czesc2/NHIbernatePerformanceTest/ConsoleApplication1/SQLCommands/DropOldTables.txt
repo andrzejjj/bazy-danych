@@ -1,0 +1,8 @@
+﻿IF OBJECT_ID('dbo.Posts_old', 'U') IS NOT NULL
+  DROP TABLE dbo.Posts_old
+
+IF OBJECT_ID('dbo.Threads_old', 'U') IS NOT NULL
+  DROP TABLE dbo.Threads_old
+
+IF OBJECT_ID('dbo.Users_old', 'U') IS NOT NULL
+  DROP TABLE dbo.Users_old

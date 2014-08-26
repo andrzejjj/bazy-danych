@@ -1,0 +1,20 @@
+﻿IF NOT EXISTS (SELECT 1 FROM sys.fulltext_catalogs WHERE name = 'folder')  
+CREATE FULLTEXT CATALOG [folder] WITH ACCENT_SENSITIVITY = ON 
+
+
+DECLARE @pk varchar(128) 
+SET @pk = (SELECT CONSTRAINT_NAME FROM tolkienForum.INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME = 'Posts' AND CONSTRAINT_TYPE = 'PRIMARY KEY') 
+
+DECLARE @sqlCommand varchar(1000) 
+SET @sqlCommand =  
+'CREATE FULLTEXT INDEX ON Posts
+(PST_Content LANGUAGE 1033) 
+
+KEY INDEX ' 
+SET @sqlCommand = @sqlCommand + @pk
+SET @sqlCommand = @sqlCommand +
+' 
+ON folder 
+WITH STOPLIST = SYSTEM 
+' 
+EXEC (@sqlCommand)

@@ -1,0 +1,22 @@
+﻿EXEC dbo.sp_rename @objname = N'[dbo].[Users]', @newname = N'Users_old', @objtype = N'OBJECT'
+
+SET ANSI_NULLS ON
+
+CREATE TABLE [dbo].[Users]
+(
+	[USR_ID] [int] NOT NULL,
+	[USR_Login] [nvarchar](100) COLLATE Latin1_General_100_CI_AS NOT NULL,
+	[USR_City] [nvarchar](100) COLLATE Latin1_General_100_BIN2 NOT NULL,
+	[USR_CreationDate] [datetime] NULL,
+
+INDEX [IDX_USR_CITY] NONCLUSTERED HASH 
+(
+	[USR_City]
+)WITH ( BUCKET_COUNT = 512),
+CONSTRAINT [Users_primaryKey] PRIMARY KEY NONCLUSTERED HASH 
+(
+	[USR_ID]
+)WITH ( BUCKET_COUNT = 1024)
+)WITH ( MEMORY_OPTIMIZED = ON , DURABILITY = SCHEMA_AND_DATA )
+
+
